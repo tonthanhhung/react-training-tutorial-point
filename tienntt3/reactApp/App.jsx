@@ -1,40 +1,74 @@
 import React from 'react';
 
 class App extends React.Component {
+
    constructor(props) {
       super(props);
 		
       this.state = {
-         header: "Header from props...",
-         "content": "Content from props..."
+         data: 0,
+         name: ""
       }
-   }
-	
-   render() {
-      return (
-         <div>
-            <Header headerProp = {this.state.header}/>
-            <Content contentProp = {this.state.content}/>
-         </div>
-      );
-   }
-}
 
-class Header extends React.Component {
+      this.setNewNumber = this.setNewNumber.bind(this);
+      this.updateState = this.updateState.bind(this);
+   };
+
+   setNewNumber() {
+      this.setState({data: this.state.data + 1})
+   }
+
+   updateState(e) {
+      this.setState({name: e.target.value});
+   }
+
    render() {
       return (
          <div>
-            <h1>{this.props.headerProp}</h1>
+            <button onClick = {this.setNewNumber}>INCREMENT</button>
+            <Content myNumber = {this.state.data}></Content>
+            <input type = "text" value = {this.state.name} 
+               onChange = {this.updateState} />
+            <h4>{this.state.name}</h4>
          </div>
       );
    }
 }
 
 class Content extends React.Component {
+
+   componentWillMount() {
+      console.log('Component WILL MOUNT!')
+   }
+
+   componentDidMount() {
+      console.log('Component DID MOUNT!')
+   }
+
+   componentWillReceiveProps(newProps) {    
+      console.log('Component WILL RECIEVE PROPS!')
+   }
+
+   shouldComponentUpdate(newProps, newState) {
+      return true;
+   }
+
+   componentWillUpdate(nextProps, nextState) {
+      console.log('Component WILL UPDATE!');
+   }
+
+   componentDidUpdate(prevProps, prevState) {
+      console.log('Component DID UPDATE!')
+   }
+
+   componentWillUnmount() {
+      console.log('Component WILL UNMOUNT!')
+   }
+	
    render() {
       return (
          <div>
-            <h2>{this.props.contentProp}</h2>
+            <h3>{this.props.myNumber}</h3>
          </div>
       );
    }
