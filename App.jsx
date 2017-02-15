@@ -1,4 +1,6 @@
 import React from 'react';
+import PropsValidation from './props.validation.jsx';
+import ComponentAPI from './component.api.jsx'
 
 class App extends React.Component {
     
@@ -33,8 +35,6 @@ class App extends React.Component {
         return (
             <div>
                 {/* This is just comment */}
-                <h1>Header</h1>
-                <h3>Content</h3>
                 <p data-name="Vu">This is a paragraph</p>
                 <p>{condition == true ? "It's true :p" : "It's not true :)"}</p>
                 <Header />
@@ -47,6 +47,10 @@ class App extends React.Component {
                 <h3>Test props</h3>
                 <h4>{this.props.headerProp}</h4>
                 <h4>{this.props.contentProp}</h4>
+                <p>Props Validation</p>
+                <PropsValidation />
+                <p>Component API</p>
+                <ComponentAPI />
             </div>
         );
     }
