@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from './Container';
+import ListItem from './Listitem';
 
 class App extends React.Component{
 	constructor(props){
@@ -35,11 +35,11 @@ class Header extends React.Component{
 
 class Content extends React.Component {
    render() {
+      
       return (
          <div>
             <h2>{this.props.contentProp}</h2>
-            <ListItem />
-            
+            <ListItem />            
          </div>
       );
    }
