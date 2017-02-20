@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
+import ReorderList from './reorderList.exercise.jsx'
 
-ReactDOM.render(<App headerProp = "Header from props..." contentProp = "Content from props..."/>, document.getElementById('app'));
+ReactDOM.render(<ReorderList />, document.getElementById('app'));

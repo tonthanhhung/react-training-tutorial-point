@@ -1,6 +1,7 @@
 import React from 'react';
 import PropsValidation from './props.validation.jsx';
-import ComponentAPI from './component.api.jsx'
+import ComponentAPI from './component.api.jsx';
+import ReorderList from './reorderList.exercise.jsx'
 
 class App extends React.Component {
     
