@@ -8,18 +8,6 @@ class App extends React.Component {
 
    render() {
       return (
-         <Content/>
-      );
-   }
-}
-
-class Content extends React.Component {
- constructor(props) {
-      super(props);
-   }
-
-   render() {
-      return (
           <div>
             <AddComponent/>
          </div>
