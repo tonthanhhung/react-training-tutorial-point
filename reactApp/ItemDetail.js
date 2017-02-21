@@ -11,7 +11,7 @@ class ItemDetail extends React.Component{
   render(){
     return (
       <li key={this.props.id}>
-          {this.props.itemProp}
+          {this.props.id} - {this.props.itemProp}
           <button onClick={this.props.moveup}>moveup</button>
           <button onClick={this.props.movedown}>movedown</button>
       </li>

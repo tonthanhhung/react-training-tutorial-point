@@ -16,26 +16,32 @@ class ListItem extends React.Component{
 		var todo_val = this.refs.todo_val.value;
 		this.state.items.push(todo_val);
 		this.setState({items: this.state.items});
-
-		console.log(this.state.items);
 	} 
 	moveItem(a, b){
 		var listitems = this.state.items.slice();	
-		
 		var tmp  = listitems[a];
 		listitems[a] = listitems[b];
 		listitems[b] = tmp;
+		
 		this.setState({items: listitems});
 	}
 	moveup(key) {
-    	if(key>0){
-            var b = key--;
+		var listitems = this.state.items.slice();
+
+        if(key == 0){ // first item
+        	var b = listitems.length -1;
+            this.moveItem(key,b);  
+        }else{
+        	var b = key--;
             this.moveItem(key,b);  
         }
   	}
 	movedown(key) {
 	    if(key < this.state.items.length -1){
 	    	var b = key++;
+	    	this.moveItem(key, b);	
+	    }else{
+	    	var b = 0;
 	    	this.moveItem(key, b);	
 	    }
 	}
