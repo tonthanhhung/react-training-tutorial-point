@@ -29,7 +29,6 @@ class AddComponent extends React.Component{
       this.onSwap = this.onSwap.bind(this);
       this.onTop = this.onTop.bind(this);
    }
-
    setOnChangeValue(e) {
       this.setState({addValue: e.target.value});
       console.log(this.state.addValue);
@@ -52,7 +51,7 @@ class AddComponent extends React.Component{
 
    onTop(x){ 
        var y = 0;
-       this.onSwap(x,0);    
+       this.onSwap(x,0); 
    }
 
    moveUp(x){
